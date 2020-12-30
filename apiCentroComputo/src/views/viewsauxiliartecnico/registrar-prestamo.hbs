@@ -1,0 +1,156 @@
+
+
+<div id="sidemenu" class="menu-collapsed">
+    
+    <!--HEADER-->
+    <div id="header">
+        <div id="title"><span>Sistema del Centro de Computo</span></div>
+        <div id="menu-btn">
+            <div class="btn-hamburger"></div>
+            <div class="btn-hamburger"></div>
+            <div class="btn-hamburger"></div>
+
+        </div>
+    </div>
+
+    <!--PROFILE-->
+    <div id="profile">
+        <div id="photo"><img src="img/profile.png" alt=""></div>
+        <div id="usuario"> <span>Matricula</span></div>
+    </div>
+
+    <!--ITEMS-->
+    <div id="menu-items">
+        <div class="item">
+            <a href="#">
+                <div class="icon"><img src="img/icons-navegation/actividad.png" alt=""></div>
+                <div class="title"><span>Actividad</span></div>
+            </a>
+        </div>
+        
+        <div class="item separator">
+        </div>
+
+        <div class="item">
+            <a href="/registrar-prestamo">
+                <div class="icon"><img src="img/icons-navegation/computadora.png" alt=""></div>
+                <div class="title"><span>Equipo de Computo</span></div>
+            </a>
+        </div>
+        
+        <div class="item separator">
+        </div>
+
+        <div class="item">
+            <a href="/encuesta">
+                <div class="icon"><img src="img/icons-navegation/reservacion.png" alt=""></div>
+                <div class="title"><span>Reservación</span></div>
+            </a>
+        </div>
+
+        <div class="item separator">
+        </div>
+
+        <div class="item">
+            <a href="#">
+                <div class="icon"><img src="img/icons-navegation/reservacion.png" alt=""></div>
+                <div class="title"><span>Reservación</span></div>
+            </a>
+        </div>
+        
+        <div class="item separator">
+        </div>
+
+        <div class="item">
+            <a href="#">
+                <div class="icon"><img src="img/icons-navegation/encuesta.png" alt=""></div>
+                <div class="title"><span>Encuesta Satisfaccion</span></div>
+            </a>
+        </div>
+
+    </div>
+
+    <script>
+        const btn = document.querySelector('#menu-btn');
+        const menu = document.querySelector('#sidemenu');
+        btn.addEventListener('click', e =>{
+            menu.classList.toggle("menu-expanded");
+            menu.classList.toggle("menu-collapsed");
+
+            document.querySelector('body').classList.toggle('body-expanded');
+        });
+    </script>
+
+</div>
+    
+<div class="col-md-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h3>Registrar Prestamo</h3>
+        </div>
+
+        <div class="card-body">
+            <form action="/registrar-prestamo/new-prestamo" method="POST">
+                <div class="form-group">
+                    <label for="tipo">Fecha Prestamo:</label>
+
+                    <div class="form-group">
+                        <input type="date" id="fechaPrestamo" name="fechaPrestamo"/>
+                    </div>
+
+                    
+                    <label for="tipo">Experiencia Educativa:</label>
+
+                    <div class="form-group">
+                        <input type="text" id="experiencia" name="experiencia"/>
+                    </div>
+
+                    <label for="tipo">Horario de clases:</label>
+
+                    <div class="form-group">
+                        <input type="text" id="horario" name="horario"/>
+                    </div>
+
+                    <label for="tipo">Salon:</label>
+
+                    <div class="form-group">
+                        <input type="radio" id="salon1" value="CC1" name="preguntasalon"/>CC1
+                        <input type="radio" id="salon2" value="CC2" name="preguntasalon"/>CC2
+                        <input type="radio" id="salon3" value="CC3" name="preguntasalon"/>CC3
+                        <input type="radio" id="salon4" value="CC4" name="preguntasalon"/>CC4
+                    </div>
+
+                    <label for="tipo">Solicitate:</label>
+
+                    <div class="form-group">
+                        <input type="text" id="solicitante" name="solicitante"/>
+                    </div>
+
+                    <label for="tipo">Equipo:</label>
+
+                    <div class="form-group">
+                        <select name="equipo" size="valoresvisibles">
+                            <option>Atlético de Madrid</option>
+                            <option>Real Betis</option>
+                            <option>FC. Barcelona</option>
+                            <option>Real Madrid</option>
+                            <option>Zaragoza</option>
+                        </select>
+                    </div>
+                    
+
+
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" type="submit">
+                            Registrar
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+

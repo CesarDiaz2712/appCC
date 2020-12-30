@@ -1,0 +1,153 @@
+<!--Usuario Estudiante-->
+
+<div id="sidemenu" class="menu-collapsed">
+    
+    <!--HEADER-->
+    <div id="header">
+        <div id="title"><span>Sistema del Centro de Computo</span></div>
+        <div id="menu-btn">
+            <div class="btn-hamburger"></div>
+            <div class="btn-hamburger"></div>
+            <div class="btn-hamburger"></div>
+
+        </div>
+    </div>
+
+    <!--PROFILE-->
+    <div id="profile">
+        <div id="photo"><img src="img/profile.png" alt=""></div>
+        <div id="usuario"> <span>Matricula</span></div>
+    </div>
+
+    <!--ITEMS-->
+    <div id="menu-items">
+        <div class="item">
+            <a href="/menuest-reserva">
+                <div class="icon"><img src="img/icons-navegation/reservacion.png" alt=""></div>
+                <div class="title"><span>Registrar Prestamo</span></div>
+            </a>
+        </div>
+        
+        <div class="item separator">
+        </div>
+
+        <div class="item">
+            <a href="/encuestaest">
+                <div class="icon"><img src="img/icons-navegation/encuesta.png" alt=""></div>
+                <div class="title"><span>Encuesta Satisfacción</span></div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.querySelector('#menu-btn');
+        const menu = document.querySelector('#sidemenu');
+        btn.addEventListener('click', e =>{
+            menu.classList.toggle("menu-expanded");
+            menu.classList.toggle("menu-collapsed");
+
+            document.querySelector('body').classList.toggle('body-expanded');
+        });
+    </script>
+    
+</div>
+
+
+    <div id="main-container">
+    </div>
+
+    <div class="col-md-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h3>Registrar Prestamo</h3>
+        </div>
+
+        <div class="card-body">
+            <form action="/registrar-reserva/new-reserva" method="POST">
+                <div class="form-group">
+                    <label for="tipo">Tipo reserva:</label>
+
+                    <div id="reserv" class="form-group">
+                        <select id="elegir_reserv" name="tiporeserv" size="valoresvisibles" onclick="ocultar();">
+                            <option>Salon</option>
+                            <option>Momentanea</option>
+                            <option>Fija</option>
+                        </select>
+                    </div>
+
+                    
+                    <label for="tipo">Fecha reserva:</label>
+
+                    <div class="form-group">
+                        <input type="date" id="fechareserv" name="fechareserv"/>
+                    </div>
+
+                    <label for="tipo">Hora inicio:</label>
+
+                    <div class="form-group">
+                        <input type="time" id="horainicio" name="horainicio"/>
+                    </div>
+
+                    <label for="tipo">Hora fin:</label>
+
+                    <div class="form-group">
+                        <input type="time" id="horafin" name="horafin"/>
+                    </div>
+
+                    <label for="tipo">Salon CC:</label>
+
+                    <div class="form-group">
+                        <input type="radio" id="salon1" value="CC1" name="preguntasalon"/>CC1
+                        <input type="radio" id="salon2" value="CC2" name="preguntasalon"/>CC2
+                        <input type="radio" id="salon3" value="CC3" name="preguntasalon"/>CC3
+                        <input type="radio" id="salon4" value="CC4" name="preguntasalon"/>CC4
+                    </div>
+
+                    <label for="tipo">Solicitate:</label>
+
+                    <div class="form-group">
+                        <input type="text" id="solicitante" name="solicitante"/>
+                    </div>
+
+                    <label for="tipo">Descripcion:</label>
+
+                    <div class="form-group">
+                        <input type="text" id="descripcion" name="descripcion"/>
+                    </div>
+                    
+                            <label id="labelmotivo" for="tipo" style="visibility:hidden;">Motivo:</label>
+
+                            <div id="elemento-motivo" class="form-group" style="visibility:hidden;">
+                                <input type="text" id="motivo" name="motivo"/>
+                            </div>
+                    
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" type="submit">
+                            Registrar
+                        </button>
+                    </div>
+                    
+
+                    <script>
+
+                        
+                        var select = $("#elegir_reserv").change(function() {
+                        var valor = $(this).val(); // Capturamos el valor del select
+                        var texto = $(this).find('option[value=' + valor + ']').text(); // Capturamos el texto del option seleccionado
+                        console.log(valor, texto);
+                        });
+
+                        while(select=="Fija"){
+                        function ocultar(){
+                            document.getElementById('elemento-motivo').style.visibility="visible";
+                            document.getElementById('labelmotivo').style.visibility="visible";
+                        }
+                        }
+                    </script>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

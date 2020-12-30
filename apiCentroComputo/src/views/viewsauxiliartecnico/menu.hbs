@@ -1,0 +1,118 @@
+<!--Usuario Estudiante-->
+
+<div id="sidemenu" class="menu-collapsed">
+    
+    <!--HEADER-->
+    <div id="header">
+        <div id="title"><span>Sistema del Centro de Computo</span></div>
+        <div id="menu-btn">
+            <div class="btn-hamburger"></div>
+            <div class="btn-hamburger"></div>
+            <div class="btn-hamburger"></div>
+
+        </div>
+    </div>
+
+    <!--PROFILE-->
+    <div id="profile">
+        <div id="photo"><img src="img/profile.png" alt=""></div>
+        <div id="usuario"> <span>Matricula</span></div>
+    </div>
+
+    <!--ITEMS-->
+    <div id="menu-items">
+        <div class="item">
+            <a href="#">
+                <div class="icon"><img src="img/icons-navegation/actividad.png" alt=""></div>
+                <div class="title"><span>Actividad</span></div>
+            </a>
+        </div>
+        
+        <div class="item separator">
+        </div>
+
+        <div class="item">
+            <a href="#">
+                <div class="icon"><img src="img/icons-navegation/computadora.png" alt=""></div>
+                <div class="title"><span>Equipo de Computo</span></div>
+            </a>
+        </div>
+        
+        <div class="item separator">
+        </div>
+
+        <div class="item">
+            <a href="#">
+                <div class="icon"><img src="img/icons-navegation/reservacion.png" alt=""></div>
+                <div class="title"><span>Reservación</span></div>
+            </a>
+        </div>
+
+        <div class="item separator">
+        </div>
+
+        <div class="item">
+            <a href="#">
+                <div class="icon"><img src="img/icons-navegation/reservacion.png" alt=""></div>
+                <div class="title"><span>Reservación</span></div>
+            </a>
+        </div>
+        
+        <div class="item separator">
+        </div>
+
+        <div class="item">
+            <a href="#">
+                <div class="icon"><img src="img/icons-navegation/encuesta.png" alt=""></div>
+                <div class="title"><span>Encuesta Satisfaccion</span></div>
+            </a>
+        </div>
+
+    </div>
+
+    <script>
+        const btn = document.querySelector('#menu-btn');
+        const menu = document.querySelector('#sidemenu');
+        btn.addEventListener('click', e =>{
+            menu.classList.toggle("menu-expanded");
+            menu.classList.toggle("menu-collapsed");
+
+            document.querySelector('body').classList.toggle('body-expanded');
+        });
+    </script>
+    
+</div>
+
+
+    <div id="main-container" class="container">
+        Hola a todos
+    </div>
+
+    
+    <div class="reserva-box">
+        <h1>Registrar Reserva</h1>
+        <form>
+
+            <label for="tipo">Tipo:</label>
+            <input type="text" placeholder="">
+
+            <label for="fechareserva">Fecha Reserva:</label>
+            <input type="date" placeholder="">
+
+            <label for="fechareserva">Hora Inicio:</label>
+            <input type="time" placeholder="">
+            
+            <label for="fechareserva">Hora Fin:</label>
+            <input type="time" placeholder="">
+
+            <label for="solicitante">Nombre solicitante:</label>
+            <input type="text" placeholder="">
+
+            <label for="descripcion">Descripción:</label>
+            <input type="text" placeholder="">
+            
+            <input type="submit" value="Cancelar">
+            <input type="submit" value="Reservar">
+
+        </form>
+    </div>

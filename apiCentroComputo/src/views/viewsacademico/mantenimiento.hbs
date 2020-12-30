@@ -1,0 +1,79 @@
+<!--Usuario Estudiante-->
+
+<div id="sidemenu" class="menu-collapsed">
+    
+    <!--HEADER-->
+    <div id="header">
+        <div id="title"><span>Sistema del Centro de Computo</span></div>
+        <div id="menu-btn">
+            <div class="btn-hamburger"></div>
+            <div class="btn-hamburger"></div>
+            <div class="btn-hamburger"></div>
+
+        </div>
+    </div>
+
+    <!--PROFILE-->
+    <div id="profile">
+        <div id="photo"><img src="img/profile.png" alt=""></div>
+        <div id="usuario"> <span>Matricula</span></div>
+    </div>
+
+    <!--ITEMS-->
+    <div id="menu-items">
+        <div class="item">
+            <a href="#">
+                <div class="icon"><img src="img/icons-navegation/configuraciones.png" alt=""></div>
+                <div class="title"><span>Servicio Mantenimiento</span></div>
+            </a>
+        </div>
+        
+        <div class="item separator">
+        </div>
+
+        <div class="item">
+            <a href="#">
+                <div class="icon"><img src="img/icons-navegation/encuesta.png" alt=""></div>
+                <div class="title"><span>Encuesta Satisfacción</span></div>
+            </a>
+        </div>
+        
+        <div class="item separator">
+        </div>
+
+        <div class="item">
+            <a href="#">
+                <div class="icon"><img src="img/icons-navegation/reporte.png" alt=""></div>
+                <div class="title"><span>Reporte de fallos</span></div>
+            </a>
+        </div>
+        
+        <div class="item separator">
+        </div>
+
+        <div class="item">
+            <a href="#">
+                <div class="icon"><img src="img/icons-navegation/prestamo.png" alt=""></div>
+                <div class="title"><span>Registrar Prestamo</span></div>
+            </a>
+        </div>
+
+    </div>
+
+    <script>
+        const btn = document.querySelector('#menu-btn');
+        const menu = document.querySelector('#sidemenu');
+        btn.addEventListener('click', e =>{
+            menu.classList.toggle("menu-expanded");
+            menu.classList.toggle("menu-collapsed");
+
+            document.querySelector('body').classList.toggle('body-expanded');
+        });
+    </script>
+    
+</div>
+
+
+    <div id="main-container">
+        Hola a todos
+    </div>
