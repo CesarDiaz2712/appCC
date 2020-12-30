@@ -3,17 +3,26 @@ const router = express.Router();
 const path = require('path');
 
 const Usuario = require('../models/Usuario');
-
-router.get('/users/signup', (req, res) =>{
-    res.render('users/signup');
-});
+const passport= require('passport');
 
 router.get('/users/login', (req, res) => {
     res.sendFile(path.join(__dirname + '/../views/users/login.html'));
 });
 
+router.post('/users/login', passport.authenticate('local', {
+    successRedirect: '/menuest-reserva',
+    failureRedirect: '/users/login',
+    failureFlash: true
+}));
+
+
+router.get('/users/signup', (req, res) =>{
+    res.render('users/signup');
+});
+
+
 router.post('/users/signup', async (req, res) => {
-    const {nombre, apellidos, matricula, correo, usuario, password, confirm_password}= req.body;
+    const {nombre, apellidos, matricula, tipousuario, correo, usuario, password, confirm_password}= req.body;
     const errors= [];
 
     if(nombre.length <= 0){
@@ -21,6 +30,9 @@ router.post('/users/signup', async (req, res) => {
     }
     if(apellidos.length <= 0){
         errors.push({text: 'Ingrese el campo apellidos'});
+    }
+    if(tipousuario.length <= 0){
+        errors.push({text: 'Eliga el tipo de usuario'});
     }
     if(correo.length <= 0){
         errors.push({text: 'Ingrese el campo correo'});
@@ -41,7 +53,7 @@ router.post('/users/signup', async (req, res) => {
         errors.push({text: 'Contraseña menor a 4 digitos'});
     }
     if(errors.length > 0){
-        res.render('users/signup', {errors, nombre, apellidos, matricula, correo, usuario, password, confirm_password});
+        res.render('users/signup', {errors, nombre, apellidos, matricula, tipousuario,  correo, usuario, password, confirm_password});
     }else{
         const user_email = await Usuario.findOne({correo: correo});
         if(user_email){
@@ -49,7 +61,7 @@ router.post('/users/signup', async (req, res) => {
             res.redirect('/users/login');
         }
 
-        const newUsuario = new Usuario({nombre, apellidos, matricula, correo, usuario, password});
+        const newUsuario = new Usuario({nombre, apellidos, matricula, tipousuario, correo, usuario, password});
         newUsuario.password = await newUsuario.encryptPassword(password);
         await newUsuario.save();
         req.flash('success_msg', 'Usuario registrado');

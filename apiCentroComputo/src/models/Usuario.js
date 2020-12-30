@@ -7,6 +7,7 @@ const UsuarioSchema = new Schema({
     nombre: {type: String, required:true},
     apellidos: {type:String, required:true},
     matricula: {type:String, required:true},
+    tipousuario: {type:String, required:true},
     correo: {type:String, required:true},
     usuario: {type:String, required:true},
     password: {type:String, required:true},
