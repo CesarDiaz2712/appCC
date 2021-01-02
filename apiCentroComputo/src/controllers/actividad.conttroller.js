@@ -44,15 +44,27 @@ export const allActividades= async (req, res) => {
   };
 
 
-export const editarActividad= async(req,res)=>{
-    const { title, description } = req.body;
+export const consultarActividadSeleccionda= async(req,res)=>{
+    
+    const actividad =await Actividad.findById(req.params.id).lean();
+    console.log(actividad);
+    res.render('viewsauxiliartecnico/editar-actividad', {actividad});
+    /*const { title, description } = req.body;
     await Note.findByIdAndUpdate(req.params.id, { title, description });
     req.flash("success_msg", "Note Updated Successfully");
-    res.redirect("/notes");
+    res.redirect("/notes");*/
 };
 
+export const editarActividad = async(req,res)=>{
+    
+    const {nrc, nombre, carrera, bloque, seccion}= req.body;
+    await Actividad.findByIdAndUpdate(req.params.id,{nrc, nombre, carrera, bloque, seccion});
+    console.log('ok');
+    res.redirect('/act/all-actividades');
+}
+
 export const eliminarActividad= async(req,res)=>{
-    await Note.findByIdAndDelete(req.params.id);
+    await Actividad.findByIdAndDelete(req.params.id);
     req.flash("success_msg", "Note Deleted Successfully");
-    res.redirect("/notes");
+    res.redirect("/act/all-actividades");
 };

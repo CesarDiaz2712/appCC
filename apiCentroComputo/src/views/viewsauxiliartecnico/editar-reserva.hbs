@@ -1,5 +1,4 @@
 
-
 <div id="sidemenu" class="menu-collapsed">
     
     <!--HEADER-->
@@ -80,41 +79,57 @@
             document.querySelector('body').classList.toggle('body-expanded');
         });
     </script>
-
-</div>
     
-<div class="col-md-4 mx-auto">
+</div>
+
+
+    <div id="main-container">
+    </div>
+
+    <div class="col-md-4 mx-auto">
     <div class="card">
         <div class="card-header">
-            <h3>Registrar Prestamo</h3>
+            <h3>Registrar Reserva</h3>
         </div>
 
         <div class="card-body">
-            <form action="/registrar-prestamo/new-prestamo" method="POST">
+            <form action="/reserv/registrar-reserva/new-reserva" method="POST">
                 <div class="form-group">
-                    <label for="tipo">Fecha Prestamo:</label>
+                    <label for="tipo">Tipo reserva:</label>
 
-                    <div class="form-group">
-                        <input type="date" id="fechaPrestamo" name="fechaPrestamo"/>
+                    <div id="reserv" class="form-group">
+                        <select id="elegir_reserv" name="tiporeserv" size="valoresvisibles">
+                            <option>{{reservaFija.tiporeserv}}</option>
+                            <option>Salon</option>
+                            <option>Momentanea</option>
+                            <option>Fija</option>
+                        </select>
                     </div>
 
                     
-                    <label for="tipo">Experiencia Educativa:</label>
+                    <label for="tipo">Fecha reserva:</label>
 
                     <div class="form-group">
-                        <input type="text" id="experiencia" name="experiencia"/>
+                        <input type="date" id="fechareserv" name="fechareserv"  value="{{reservaFija.fechareserv}}"/>
                     </div>
 
-                    <label for="tipo">Horario de clases:</label>
+                    <label for="tipo">Hora inicio:</label>
 
                     <div class="form-group">
-                        <input type="text" id="horario" name="horario"/>
+                        <input type="time" id="horainicio" name="horainicio"  value="{{reservaFija.horainicio}}"/>
                     </div>
 
-                    <label for="tipo">Salon:</label>
+                    <label for="tipo">Hora fin:</label>
+
+                    <div class="form-group">
+                        <input type="time" id="horafin" name="horafin"  value="{{reservaFija.horafin}}"/>
+                    </div>
+
+                    <label for="tipo">Salon CC:</label>
 
                     <div class="form-group">
                         <select id="salon" name="salon" size="valoresvisibles">
+                            <option>{{reservaFija.salon}}</option>
                             <option>CC1</option>
                             <option>CC2</option>
                             <option>CC3</option>
@@ -125,27 +140,28 @@
                     <label for="tipo">Solicitate:</label>
 
                     <div class="form-group">
-                        <input type="text" id="solicitante" name="solicitante"/>
+                        <input type="text" id="solicitante" name="solicitante" value="{{reservaFija.solicitante}}"/>
                     </div>
 
-                    <label for="tipo">Equipo:</label>
+                    <label for="tipo">Descripcion:</label>
 
                     <div class="form-group">
-                        <select id="equipo" name="equipo" size="valoresvisibles">
-                            <option>A1</option>
-                            <option>A2</option>
-                            <option>A3</option>
-                            <option>A4</option>
-                        </select>
+                        <input type="text" id="descripcion" name="descripcion" value="{{reservaFija.descripcion}}"/>
                     </div>
                     
-
-
+                           
+                    <label id="labelmotivo" for="tipo">Motivo:</label>
+                    
+                    <div id="elementos-motivo" class="form-group">
+                        <input type="text" id="motivo" name="motivo"/>
+                    </div>
+                    
                     <div class="form-group">
                         <button class="btn btn-primary btn-block" type="submit">
                             Registrar
                         </button>
                     </div>
+                    
 
                 </div>
             </form>
@@ -153,5 +169,3 @@
     </div>
 
 </div>
-
-

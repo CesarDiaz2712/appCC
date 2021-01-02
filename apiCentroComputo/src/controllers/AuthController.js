@@ -88,11 +88,12 @@ export const signin= async(req, res)=>{
         
         //const compareTIpo= await user.findOne({tipousuario})
         if(userFound.tipousuario=="estudiante"){
-            res.redirect('/student/registrar-prestamo');
-            console.log(userFound);
+            
+            console.log(userFound.matricula);
+            res.render("viewsestudiante/menu", {userFound});
         }
         if(userFound.tipousuario=="auxiliartecnico"){
-            res.redirect('/menu-auxtec-reserva');
+            res.render("viewsauxiliartecnico/menu", {userFound});
             console.log(userFound);
         }
         }

@@ -1,5 +1,3 @@
-
-
 <div id="sidemenu" class="menu-collapsed">
     
     <!--HEADER-->
@@ -82,68 +80,60 @@
     </script>
 
 </div>
-    
+
 <div class="col-md-4 mx-auto">
     <div class="card">
         <div class="card-header">
-            <h3>Registrar Prestamo</h3>
+            <h3>Editar Actividad Seleccionada</h3>
         </div>
-
+        
         <div class="card-body">
-            <form action="/registrar-prestamo/new-prestamo" method="POST">
+            <form action="/act/editar-actividades/{{actividad._id}}?_method=PUT" method="POST">
+            <input type="hidden" name="_method" value="PUT">
                 <div class="form-group">
-                    <label for="tipo">Fecha Prestamo:</label>
-
-                    <div class="form-group">
-                        <input type="date" id="fechaPrestamo" name="fechaPrestamo"/>
-                    </div>
-
                     
-                    <label for="tipo">Experiencia Educativa:</label>
+                    <label for="tipo">NRC:</label>
 
                     <div class="form-group">
-                        <input type="text" id="experiencia" name="experiencia"/>
+                        <input type="text" id="nrc" name="nrc" value="{{actividad.nrc}}"/>
                     </div>
 
-                    <label for="tipo">Horario de clases:</label>
+                    <label for="tipo">Nombre (EE):</label>
 
                     <div class="form-group">
-                        <input type="text" id="horario" name="horario"/>
+                        <input type="text" id="nombre" name="nombre" value="{{actividad.nombre}}"/>
                     </div>
 
-                    <label for="tipo">Salon:</label>
+                    <label for="tipo">Carrera:</label>
 
                     <div class="form-group">
-                        <select id="salon" name="salon" size="valoresvisibles">
-                            <option>CC1</option>
-                            <option>CC2</option>
-                            <option>CC3</option>
-                            <option>CC4</option>
+                        <input type="text" id="carrera" name="carrera" value="{{actividad.carrera}}"/>
+                    </div>
+
+                    <label for="tipo">Bloque:</label>
+
+                    <div class="form-group">
+                        <select id="bloque" name="bloque" size="valoresvisibles">
+                            <option >{{actividad.bloque}}</option>
+                            <option>Bloque 1</option>
+                            <option>Bloque 2</option>
+                            <option>Bloque 3</option>
                         </select>
                     </div>
 
-                    <label for="tipo">Solicitate:</label>
+                    <label for="tipo">Seccion:</label>
 
                     <div class="form-group">
-                        <input type="text" id="solicitante" name="solicitante"/>
-                    </div>
-
-                    <label for="tipo">Equipo:</label>
-
-                    <div class="form-group">
-                        <select id="equipo" name="equipo" size="valoresvisibles">
-                            <option>A1</option>
-                            <option>A2</option>
-                            <option>A3</option>
-                            <option>A4</option>
+                        <select id="seccion" name="seccion" size="valoresvisibles">
+                            <option >{{actividad.seccion}}</option>
+                            <option>Seccion 1</option>
+                            <option>Seccion 2</option>
+                            <option>Seccion 3</option>
                         </select>
                     </div>
-                    
-
-
                     <div class="form-group">
                         <button class="btn btn-primary btn-block" type="submit">
-                            Registrar
+                            Actualizar
                         </button>
                     </div>
 
@@ -153,5 +143,3 @@
     </div>
 
 </div>
-
-

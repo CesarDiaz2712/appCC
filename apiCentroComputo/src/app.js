@@ -10,6 +10,7 @@ const passport = require('passport');
 import {createRoles} from './libs/initialSetup'
 import authRoutes from './routes/auth.routes'
 import actividadRoutes from './routes/actividad'
+import reservaRoutes from './routes/reserva'
 
 //Inicializaciones
 const app = express();
@@ -63,6 +64,7 @@ app.use(require('./routes/prestamo'));
 
 app.use('/api/auth',authRoutes)
 app.use('/act',actividadRoutes)
+app.use('/reserv',reservaRoutes)
 
 //Archivos estaticos
 app.use(express.static(path.join(__dirname, 'public')));

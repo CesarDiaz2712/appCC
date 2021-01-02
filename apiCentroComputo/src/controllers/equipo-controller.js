@@ -1,0 +1,1 @@
+import equipo from "../models/Equipo";
