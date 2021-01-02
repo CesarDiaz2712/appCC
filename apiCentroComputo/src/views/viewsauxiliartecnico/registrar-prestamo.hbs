@@ -15,16 +15,16 @@
 
     <!--PROFILE-->
     <div id="profile">
-        <div id="photo"><img src="img/profile.png" alt=""></div>
+        <div id="photo"><img src="/img/profile.png" alt=""></div>
         <div id="usuario"> <span>Matricula</span></div>
     </div>
 
     <!--ITEMS-->
     <div id="menu-items">
         <div class="item">
-            <a href="#">
-                <div class="icon"><img src="img/icons-navegation/actividad.png" alt=""></div>
-                <div class="title"><span>Actividad</span></div>
+            <a href="/registro-actividad">
+                <div class="icon"><img src="/img/icons-navegation/actividad.png" alt=""></div>
+                <div class="title"><span>Registrar Actividad</span></div>
             </a>
         </div>
         
@@ -32,9 +32,9 @@
         </div>
 
         <div class="item">
-            <a href="/registrar-prestamo">
-                <div class="icon"><img src="img/icons-navegation/computadora.png" alt=""></div>
-                <div class="title"><span>Equipo de Computo</span></div>
+            <a href="/act/all-actividades">
+                <div class="icon"><img src="/img/icons-navegation/actividad.png" alt=""></div>
+                <div class="title"><span>Consultar Actividades</span></div>
             </a>
         </div>
         
@@ -42,9 +42,9 @@
         </div>
 
         <div class="item">
-            <a href="/encuesta">
-                <div class="icon"><img src="img/icons-navegation/reservacion.png" alt=""></div>
-                <div class="title"><span>Reservación</span></div>
+            <a href="/menu-auxtec-reserva">
+                <div class="icon"><img src="/img/icons-navegation/reservacion.png" alt=""></div>
+                <div class="title"><span>Registrar Reserva</span></div>
             </a>
         </div>
 
@@ -53,8 +53,8 @@
 
         <div class="item">
             <a href="#">
-                <div class="icon"><img src="img/icons-navegation/reservacion.png" alt=""></div>
-                <div class="title"><span>Reservación</span></div>
+                <div class="icon"><img src="/img/icons-navegation/reservacion.png" alt=""></div>
+                <div class="title"><span>Consultar Reservas</span></div>
             </a>
         </div>
         
@@ -63,8 +63,8 @@
 
         <div class="item">
             <a href="#">
-                <div class="icon"><img src="img/icons-navegation/encuesta.png" alt=""></div>
-                <div class="title"><span>Encuesta Satisfaccion</span></div>
+                <div class="icon"><img src="/img/icons-navegation/computadora.png" alt=""></div>
+                <div class="title"><span>Registrar Equipo</span></div>
             </a>
         </div>
 
@@ -114,10 +114,12 @@
                     <label for="tipo">Salon:</label>
 
                     <div class="form-group">
-                        <input type="radio" id="salon1" value="CC1" name="preguntasalon"/>CC1
-                        <input type="radio" id="salon2" value="CC2" name="preguntasalon"/>CC2
-                        <input type="radio" id="salon3" value="CC3" name="preguntasalon"/>CC3
-                        <input type="radio" id="salon4" value="CC4" name="preguntasalon"/>CC4
+                        <select id="salon" name="salon" size="valoresvisibles">
+                            <option>CC1</option>
+                            <option>CC2</option>
+                            <option>CC3</option>
+                            <option>CC4</option>
+                        </select>
                     </div>
 
                     <label for="tipo">Solicitate:</label>
@@ -129,12 +131,11 @@
                     <label for="tipo">Equipo:</label>
 
                     <div class="form-group">
-                        <select name="equipo" size="valoresvisibles">
-                            <option>Atlético de Madrid</option>
-                            <option>Real Betis</option>
-                            <option>FC. Barcelona</option>
-                            <option>Real Madrid</option>
-                            <option>Zaragoza</option>
+                        <select id="equipo" name="equipo" size="valoresvisibles">
+                            <option>A1</option>
+                            <option>A2</option>
+                            <option>A3</option>
+                            <option>A4</option>
                         </select>
                     </div>
                     

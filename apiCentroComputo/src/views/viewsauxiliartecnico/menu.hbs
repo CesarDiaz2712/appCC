@@ -15,16 +15,46 @@
 
     <!--PROFILE-->
     <div id="profile">
-        <div id="photo"><img src="img/profile.png" alt=""></div>
+        <div id="photo"><img src="/img/profile.png" alt=""></div>
         <div id="usuario"> <span>Matricula</span></div>
     </div>
 
     <!--ITEMS-->
     <div id="menu-items">
         <div class="item">
+            <a href="/registro-actividad">
+                <div class="icon"><img src="/img/icons-navegation/actividad.png" alt=""></div>
+                <div class="title"><span>Registrar Actividad</span></div>
+            </a>
+        </div>
+        
+        <div class="item separator">
+        </div>
+
+        <div class="item">
+            <a href="/act/all-actividades">
+                <div class="icon"><img src="/img/icons-navegation/actividad.png" alt=""></div>
+                <div class="title"><span>Consultar Actividades</span></div>
+            </a>
+        </div>
+        
+        <div class="item separator">
+        </div>
+
+        <div class="item">
+            <a href="/menu-auxtec-reserva">
+                <div class="icon"><img src="/img/icons-navegation/reservacion.png" alt=""></div>
+                <div class="title"><span>Registrar Reserva</span></div>
+            </a>
+        </div>
+
+        <div class="item separator">
+        </div>
+
+        <div class="item">
             <a href="#">
-                <div class="icon"><img src="img/icons-navegation/actividad.png" alt=""></div>
-                <div class="title"><span>Actividad</span></div>
+                <div class="icon"><img src="/img/icons-navegation/reservacion.png" alt=""></div>
+                <div class="title"><span>Consultar Reservas</span></div>
             </a>
         </div>
         
@@ -33,38 +63,8 @@
 
         <div class="item">
             <a href="#">
-                <div class="icon"><img src="img/icons-navegation/computadora.png" alt=""></div>
-                <div class="title"><span>Equipo de Computo</span></div>
-            </a>
-        </div>
-        
-        <div class="item separator">
-        </div>
-
-        <div class="item">
-            <a href="#">
-                <div class="icon"><img src="img/icons-navegation/reservacion.png" alt=""></div>
-                <div class="title"><span>Reservación</span></div>
-            </a>
-        </div>
-
-        <div class="item separator">
-        </div>
-
-        <div class="item">
-            <a href="#">
-                <div class="icon"><img src="img/icons-navegation/reservacion.png" alt=""></div>
-                <div class="title"><span>Reservación</span></div>
-            </a>
-        </div>
-        
-        <div class="item separator">
-        </div>
-
-        <div class="item">
-            <a href="#">
-                <div class="icon"><img src="img/icons-navegation/encuesta.png" alt=""></div>
-                <div class="title"><span>Encuesta Satisfaccion</span></div>
+                <div class="icon"><img src="/img/icons-navegation/computadora.png" alt=""></div>
+                <div class="title"><span>Registrar Equipo</span></div>
             </a>
         </div>
 
@@ -84,35 +84,87 @@
 </div>
 
 
-    <div id="main-container" class="container">
-        Hola a todos
+    <div id="main-container">
     </div>
 
-    
-    <div class="reserva-box">
-        <h1>Registrar Reserva</h1>
-        <form>
+    <div class="col-md-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h3>Registrar Reserva</h3>
+        </div>
 
-            <label for="tipo">Tipo:</label>
-            <input type="text" placeholder="">
+        <div class="card-body">
+            <form action="/registrar-reserva/new-reserva" method="POST">
+                <div class="form-group">
+                    <label for="tipo">Tipo reserva:</label>
 
-            <label for="fechareserva">Fecha Reserva:</label>
-            <input type="date" placeholder="">
+                    <div id="reserv" class="form-group">
+                        <select id="elegir_reserv" name="tiporeserv" size="valoresvisibles">
+                            <option>Salon</option>
+                            <option>Momentanea</option>
+                            <option>Fija</option>
+                        </select>
+                    </div>
 
-            <label for="fechareserva">Hora Inicio:</label>
-            <input type="time" placeholder="">
-            
-            <label for="fechareserva">Hora Fin:</label>
-            <input type="time" placeholder="">
+                    
+                    <label for="tipo">Fecha reserva:</label>
 
-            <label for="solicitante">Nombre solicitante:</label>
-            <input type="text" placeholder="">
+                    <div class="form-group">
+                        <input type="date" id="fechareserv" name="fechareserv"/>
+                    </div>
 
-            <label for="descripcion">Descripción:</label>
-            <input type="text" placeholder="">
-            
-            <input type="submit" value="Cancelar">
-            <input type="submit" value="Reservar">
+                    <label for="tipo">Hora inicio:</label>
 
-        </form>
+                    <div class="form-group">
+                        <input type="time" id="horainicio" name="horainicio"/>
+                    </div>
+
+                    <label for="tipo">Hora fin:</label>
+
+                    <div class="form-group">
+                        <input type="time" id="horafin" name="horafin"/>
+                    </div>
+
+                    <label for="tipo">Salon CC:</label>
+
+                    <div class="form-group">
+                        <select id="salon" name="salon" size="valoresvisibles">
+                            <option>CC1</option>
+                            <option>CC2</option>
+                            <option>CC3</option>
+                            <option>CC4</option>
+                        </select>
+                    </div>
+
+                    <label for="tipo">Solicitate:</label>
+
+                    <div class="form-group">
+                        <input type="text" id="solicitante" name="solicitante"/>
+                    </div>
+
+                    <label for="tipo">Descripcion:</label>
+
+                    <div class="form-group">
+                        <input type="text" id="descripcion" name="descripcion"/>
+                    </div>
+                    
+                           
+                    <label id="labelmotivo" for="tipo">Motivo:</label>
+                    
+                    <div id="elementos-motivo" class="form-group">
+                        <input type="text" id="motivo" name="motivo"/>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" type="submit">
+                            Registrar
+                        </button>
+                    </div>
+                    
+
+                </div>
+            </form>
+        </div>
     </div>
+
+</div>

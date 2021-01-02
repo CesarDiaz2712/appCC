@@ -1,0 +1,144 @@
+
+<div id="sidemenu" class="menu-collapsed">
+    
+    <!--HEADER-->
+    <div id="header">
+        <div id="title"><span>Sistema del Centro de Computo</span></div>
+        <div id="menu-btn">
+            <div class="btn-hamburger"></div>
+            <div class="btn-hamburger"></div>
+            <div class="btn-hamburger"></div>
+
+        </div>
+    </div>
+
+    <!--PROFILE-->
+    <div id="profile">
+        <div id="photo"><img src="/img/profile.png" alt=""></div>
+        <div id="usuario"> <span>Matricula</span></div>
+    </div>
+
+    <!--ITEMS-->
+    <div id="menu-items">
+        <div class="item">
+            <a href="/registro-actividad">
+                <div class="icon"><img src="/img/icons-navegation/actividad.png" alt=""></div>
+                <div class="title"><span>Registrar Actividad</span></div>
+            </a>
+        </div>
+        
+        <div class="item separator">
+        </div>
+
+        <div class="item">
+            <a href="/act/all-actividades">
+                <div class="icon"><img src="/img/icons-navegation/actividad.png" alt=""></div>
+                <div class="title"><span>Consultar Actividades</span></div>
+            </a>
+        </div>
+        
+        <div class="item separator">
+        </div>
+
+        <div class="item">
+            <a href="/menu-auxtec-reserva">
+                <div class="icon"><img src="/img/icons-navegation/reservacion.png" alt=""></div>
+                <div class="title"><span>Registrar Reserva</span></div>
+            </a>
+        </div>
+
+        <div class="item separator">
+        </div>
+
+        <div class="item">
+            <a href="#">
+                <div class="icon"><img src="/img/icons-navegation/reservacion.png" alt=""></div>
+                <div class="title"><span>Consultar Reservas</span></div>
+            </a>
+        </div>
+        
+        <div class="item separator">
+        </div>
+
+        <div class="item">
+            <a href="#">
+                <div class="icon"><img src="/img/icons-navegation/computadora.png" alt=""></div>
+                <div class="title"><span>Registrar Equipo</span></div>
+            </a>
+        </div>
+
+    </div>
+
+    <script>
+        const btn = document.querySelector('#menu-btn');
+        const menu = document.querySelector('#sidemenu');
+        btn.addEventListener('click', e =>{
+            menu.classList.toggle("menu-expanded");
+            menu.classList.toggle("menu-collapsed");
+
+            document.querySelector('body').classList.toggle('body-expanded');
+        });
+    </script>
+
+</div>
+
+<div class="col-md-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h3>Registrar Actividad</h3>
+        </div>
+
+        <div class="card-body">
+            <form action="/registrar-actividad/new-actividad" method="POST">
+                <div class="form-group">
+                    
+                    <label for="tipo">NRC:</label>
+
+                    <div class="form-group">
+                        <input type="text" id="nrc" name="nrc" value="{{actividad.nrc}}"/>
+                    </div>
+
+                    <label for="tipo">Nombre (EE):</label>
+
+                    <div class="form-group">
+                        <input type="text" id="nombre" name="nombre"/>
+                    </div>
+
+                    <label for="tipo">Carrera:</label>
+
+                    <div class="form-group">
+                        <input type="text" id="carrera" name="carrera"/>
+                    </div>
+
+                    <label for="tipo">Bloque:</label>
+
+                    <div class="form-group">
+                        <select id="bloque" name="bloque" size="valoresvisibles">
+                            <option>Bloque 1</option>
+                            <option>Bloque 2</option>
+                            <option>Bloque 3</option>
+                        </select>
+                    </div>
+
+                    <label for="tipo">Seccion:</label>
+
+                    <div class="form-group">
+                        <select id="seccion" name="seccion" size="valoresvisibles">
+                            <option>Seccion 1</option>
+                            <option>Seccion 2</option>
+                            <option>Seccion 3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" type="submit">
+                            Registrar
+                        </button>
+                    </div>
+                    
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

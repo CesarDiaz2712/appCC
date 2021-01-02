@@ -15,14 +15,14 @@
     <div class="login-box">
         <img class="logo" src="/img/uv-azul.jpg" alt="Logo uv">
         <h1>Iniciar Sesion</h1>
-        <form action="/users/login" method="POST">
+        <form action="/api/auth/signin" method="POST">
 
             <label for="usuario">Usuario</label>
             <input type="text" name="usuario" placeholder="Ingresar usuario">
 
             <label for="password">Password</label>
             <input type="password" name="password" placeholder="Ingrese contraseña">
-
+            
             <input type="submit" value="Ingresar">
 
         </form>

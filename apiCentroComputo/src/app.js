@@ -7,10 +7,15 @@ const flash = require('connect-flash');
 
 const passport = require('passport');
 
+import {createRoles} from './libs/initialSetup'
+import authRoutes from './routes/auth.routes'
+import actividadRoutes from './routes/actividad'
+
 //Inicializaciones
 const app = express();
 require('./database');
 require('./config/passport');
+createRoles();
 
 //configuracion
 app.set('port', process.env.PORT || 3000);
@@ -28,6 +33,7 @@ app.engine('hbs', exphbs({
 app.set ('view engine', 'hbs');
 
 //middleware
+app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 app.use(session({
@@ -54,6 +60,9 @@ app.use(require('./routes/reserva'));
 app.use(require('./routes/users'));
 app.use(require('./routes/encuesta'));
 app.use(require('./routes/prestamo'));
+
+app.use('/api/auth',authRoutes)
+app.use('/act',actividadRoutes)
 
 //Archivos estaticos
 app.use(express.static(path.join(__dirname, 'public')));

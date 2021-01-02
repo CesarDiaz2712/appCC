@@ -1,0 +1,111 @@
+
+<div id="sidemenu" class="menu-collapsed">
+    
+    <!--HEADER-->
+    <div id="header">
+        <div id="title"><span>Sistema del Centro de Computo</span></div>
+        <div id="menu-btn">
+            <div class="btn-hamburger"></div>
+            <div class="btn-hamburger"></div>
+            <div class="btn-hamburger"></div>
+
+        </div>
+    </div>
+
+    <!--PROFILE-->
+    <div id="profile">
+        <div id="photo"><img src="/img/profile.png" alt=""></div>
+        <div id="usuario"> <span>Matricula</span></div>
+    </div>
+
+    <!--ITEMS-->
+    <div id="menu-items">
+        <div class="item">
+            <a href="/registro-actividad">
+                <div class="icon"><img src="/img/icons-navegation/actividad.png" alt=""></div>
+                <div class="title"><span>Registrar Actividad</span></div>
+            </a>
+        </div>
+        
+        <div class="item separator">
+        </div>
+
+        <div class="item">
+            <a href="/act/all-actividades">
+                <div class="icon"><img src="/img/icons-navegation/actividad.png" alt=""></div>
+                <div class="title"><span>Consultar Actividades</span></div>
+            </a>
+        </div>
+        
+        <div class="item separator">
+        </div>
+
+        <div class="item">
+            <a href="/menu-auxtec-reserva">
+                <div class="icon"><img src="/img/icons-navegation/reservacion.png" alt=""></div>
+                <div class="title"><span>Registrar Reserva</span></div>
+            </a>
+        </div>
+
+        <div class="item separator">
+        </div>
+
+        <div class="item">
+            <a href="#">
+                <div class="icon"><img src="/img/icons-navegation/reservacion.png" alt=""></div>
+                <div class="title"><span>Consultar Reservas</span></div>
+            </a>
+        </div>
+        
+        <div class="item separator">
+        </div>
+
+        <div class="item">
+            <a href="#">
+                <div class="icon"><img src="/img/icons-navegation/computadora.png" alt=""></div>
+                <div class="title"><span>Registrar Equipo</span></div>
+            </a>
+        </div>
+
+    </div>
+
+    <script>
+        const btn = document.querySelector('#menu-btn');
+        const menu = document.querySelector('#sidemenu');
+        btn.addEventListener('click', e =>{
+            menu.classList.toggle("menu-expanded");
+            menu.classList.toggle("menu-collapsed");
+
+            document.querySelector('body').classList.toggle('body-expanded');
+        });
+    </script>
+
+</div>
+
+<div class="row">
+    <h5>Consultas de Actividades</h5>
+    {{#each actividades}}
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title d-flex justify-content-between align-items-center">
+                    {{nombre}} <a href="/editar-actividad/{{_id}}">
+                <button class="btn btn-warning btn-block btn-sm">Editar</button></i></a>
+                </h4>
+                
+                <p>{{nrc}}</p>
+                <p>{{carrera}}</p>
+                <p>{{bloque}}</p>
+                <button class="btn btn-danger btn-block btn-sm">Eliminar</button>
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <div class="card mx-auto">
+        <div class="card-body">
+            <p class="lead">No hay actividades</p>
+            <a href="/registro-actividad" class="btn btn-success btn-block">Registra una actividad</a>
+        </div>
+    </div>
+    {{/each}}
+</div>

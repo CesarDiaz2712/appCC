@@ -7,7 +7,7 @@ const ReservaM_SSchema = new Schema({
     fechareserv: {type:String, required:true},
     horainicio: {type:String, required:true},
     horafin: {type:String, required:true},
-    preguntasalon: {type:String, required:true},
+    salon: {type:String, required:true},
     solicitante: {type:String, required:true},
     motivo: {type:String, required:true},
     date: {type: Date, default: Date.now}

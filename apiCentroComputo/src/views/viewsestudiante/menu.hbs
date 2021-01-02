@@ -15,15 +15,15 @@
 
     <!--PROFILE-->
     <div id="profile">
-        <div id="photo"><img src="img/profile.png" alt=""></div>
+        <div id="photo"><img src="/img/profile.png" alt=""></div>
         <div id="usuario"> <span>Matricula</span></div>
     </div>
 
     <!--ITEMS-->
     <div id="menu-items">
         <div class="item">
-            <a href="/menuest-reserva">
-                <div class="icon"><img src="img/icons-navegation/reservacion.png" alt=""></div>
+            <a href="/student/registrar-prestamo">
+                <div class="icon"><img src="/img/icons-navegation/reservacion.png" alt=""></div>
                 <div class="title"><span>Registrar Prestamo</span></div>
             </a>
         </div>
@@ -33,7 +33,7 @@
 
         <div class="item">
             <a href="/encuestaest">
-                <div class="icon"><img src="img/icons-navegation/encuesta.png" alt=""></div>
+                <div class="icon"><img src="/img/icons-navegation/encuesta.png" alt=""></div>
                 <div class="title"><span>Encuesta Satisfacción</span></div>
             </a>
         </div>
@@ -52,98 +52,69 @@
     
 </div>
 
-
-    <div id="main-container">
-    </div>
-
-    <div class="col-md-4 mx-auto">
+<div class="col-md-4 mx-auto">
     <div class="card">
         <div class="card-header">
             <h3>Registrar Prestamo</h3>
         </div>
 
         <div class="card-body">
-            <form action="/registrar-reserva/new-reserva" method="POST">
+            <form action="/registrar-prestamo/new-prestamo" method="POST">
                 <div class="form-group">
-                    <label for="tipo">Tipo reserva:</label>
+                    <label for="tipo">Fecha Prestamo:</label>
 
-                    <div id="reserv" class="form-group">
-                        <select id="elegir_reserv" name="tiporeserv" size="valoresvisibles" onclick="ocultar();">
-                            <option>Salon</option>
-                            <option>Momentanea</option>
-                            <option>Fija</option>
-                        </select>
+                    <div class="form-group">
+                        <input type="date" id="fechaPrestamo" name="fechaPrestamo"/>
                     </div>
 
                     
-                    <label for="tipo">Fecha reserva:</label>
+                    <label for="tipo">Experiencia Educativa:</label>
 
                     <div class="form-group">
-                        <input type="date" id="fechareserv" name="fechareserv"/>
+                        <input type="text" id="experiencia" name="experiencia"/>
                     </div>
 
-                    <label for="tipo">Hora inicio:</label>
+                    <label for="tipo">Horario de clases:</label>
 
                     <div class="form-group">
-                        <input type="time" id="horainicio" name="horainicio"/>
+                        <input type="text" id="horario" name="horario"/>
                     </div>
 
-                    <label for="tipo">Hora fin:</label>
+                    <label for="tipo">Salon:</label>
 
                     <div class="form-group">
-                        <input type="time" id="horafin" name="horafin"/>
+                        <select id="salon" name="salon" size="valoresvisibles">
+                            <option>CC1</option>
+                            <option>CC2</option>
+                            <option>CC3</option>
+                            <option>CC4</option>
+                        </select>
                     </div>
 
-                    <label for="tipo">Salon CC:</label>
-
-                    <div class="form-group">
-                        <input type="radio" id="salon1" value="CC1" name="preguntasalon"/>CC1
-                        <input type="radio" id="salon2" value="CC2" name="preguntasalon"/>CC2
-                        <input type="radio" id="salon3" value="CC3" name="preguntasalon"/>CC3
-                        <input type="radio" id="salon4" value="CC4" name="preguntasalon"/>CC4
-                    </div>
-
-                    <label for="tipo">Solicitate:</label>
+                    <label for="tipo">Matricula solicitante:</label>
 
                     <div class="form-group">
                         <input type="text" id="solicitante" name="solicitante"/>
                     </div>
 
-                    <label for="tipo">Descripcion:</label>
+                    <label for="tipo">Equipo:</label>
 
                     <div class="form-group">
-                        <input type="text" id="descripcion" name="descripcion"/>
+                        <select id="equipo" name="equipo" size="valoresvisibles">
+                            <option>A1</option>
+                            <option>A2</option>
+                            <option>A3</option>
+                            <option>A4</option>
+                        </select>
                     </div>
                     
-                            <label id="labelmotivo" for="tipo" style="visibility:hidden;">Motivo:</label>
 
-                            <div id="elemento-motivo" class="form-group" style="visibility:hidden;">
-                                <input type="text" id="motivo" name="motivo"/>
-                            </div>
-                    
+
                     <div class="form-group">
                         <button class="btn btn-primary btn-block" type="submit">
                             Registrar
                         </button>
                     </div>
-                    
-
-                    <script>
-
-                        
-                        var select = $("#elegir_reserv").change(function() {
-                        var valor = $(this).val(); // Capturamos el valor del select
-                        var texto = $(this).find('option[value=' + valor + ']').text(); // Capturamos el texto del option seleccionado
-                        console.log(valor, texto);
-                        });
-
-                        while(select=="Fija"){
-                        function ocultar(){
-                            document.getElementById('elemento-motivo').style.visibility="visible";
-                            document.getElementById('labelmotivo').style.visibility="visible";
-                        }
-                        }
-                    </script>
 
                 </div>
             </form>
